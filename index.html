@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-        content="RMAvatar: Photorealistic Human Avatar from Monocular Video Based on Rectified Mesh-embedded Gaussians">
+        content="GenericAvatar: Generic Human Modeling from Monocular Video Based on Mesh-guided Gaussians">
   <meta name="keywords" content="Single-view Reconstruction,  Neural SDF Field, Dynamic Surface Reconstruction.">
   <title>GenericAvatar: Generic Human Modeling from Monocular Video Based on Mesh-guided Gaussians</title>
 
@@ -52,7 +52,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 style="font-size:30px; width: 1100px" >RMAvatar: Photorealistic Human Avatar Reconstruction from Monocular <br> Video Based on Rectified Mesh-embedded Gaussians</h1>
+          <h1 style="font-size:30px; width: 1100px" >GenericAvatar: Generic Human Modeling from Monocular Video Based on Mesh-guided Gaussians</h1>
           <div class="is-size-5 publication-authors">
             <!-- <span class="author-block">
             class="title is-3 publication-title"
@@ -90,7 +90,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://RM-Avatar.github.io"
+                <a href="https://genericavatar2025.github.io"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -99,7 +99,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://RM-Avatar.github.io"
+                <a href="https://genericavatar2025.github.io"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -108,7 +108,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://github.com/RMAvatar/RMAvatar"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -133,10 +133,6 @@
     </div>
   </div>
 </section>
-
-
-
-
 
 <div class="container">
 <section class="hero teaser">
@@ -175,7 +171,7 @@
         
         <div class="content has-text-justified">
           <p>
-            We introduce RMAvatar, a novel human avatar representation with Gaussian splatting embedded on mesh to learn clothed avatar from a monocular video. We utilize the explicit mesh geometry to represent motion and shape of a virtual human and implicit appearance rendering with Gaussian Splatting. Our method consists of two main modules: Gaussian initialization module and Gaussian rectification module. We embed Gaussians into triangular faces and control their motion through the mesh, which ensures low-frequency motion and surface deformation of the avatar. Due to the limitations of LBS formula, the human skeleton can only control rigid transformations. We design a pose-related Gaussian rectification module to learn non-rigid deformations of cloth and hair, further improving the realism and expressiveness of the avatar. We conduct extensive experiments on public datasets, RMAvatar shows state-of-the-art performance on both rendering quality and quantitative evaluations.
+            We propose a universal human avatar modeling framework—GenericAvatar—which leverages mesh-guided Gaussian splatting to achieve personalized, high-fidelity reconstruction of human bodies or heads from monocular videos. Our method is built upon a dual-module architecture. First, the Gaussian initialization module based on explicit triangular meshes embeds Gaussian splats onto the mesh surface and then transforms them into the global coordinate system, thereby stably capturing the low-frequency motions and surface deformations of human avatars. Second, the Gaussian adjustment module employs a Triplane representation to encode 3D Gaussian splats, followed by the integration of a spatial-posture cross attention module and a MLP module, which effectively overcomes the limitations of traditional linear blend skinning (LBS) in modeling complex non-rigid deformations, enabling precise modeling of high-frequency details such as clothing wrinkles and dynamic hair. By fully integrating the geometric priors provided by explicit meshes with implicit Gaussian representations, GenericAvatar demonstrates state-of-the-art reconstruction performance across PeopleSnapshot, ZJU-Mocap and a monocular head dataset. Experimental results indicate that GenericAvatar could accurately reconstruct full-body avatar and human head with complex textures and intricate dynamic details.
           </p>
         </div>
       </div>
@@ -183,117 +179,6 @@
     <!--/ Abstract. -->
   </div>
 </section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-        <h3 class="title is-4">Comparison Experiments</h3>
-        <div class="content has-text-justified">
-          <p>
-            <b>Novel view synthesis on PeopleSnapshot:</b> Our method is able to reconstruct intricate texture details.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="90%">
-            <source src="./static/video/1.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="90%">
-            <source src="./static/video/2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="90%">
-            <source src="./static/video/3.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-
-        <div class="content has-text-justified">
-          <p>
-            <b>Novel view synthesis on ZJU-MoCap:</b> Our method reconstructs complicated cloth textures.
-          </p>
-        </div>
-
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="90%">
-            <source src="./static/video/4.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="90%">
-            <source src="./static/video/5.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-
-              
-        <div class="content has-text-justified">
-          <p>
-            <b>Avatar animation on out-of-distribution poses:</b> Our method generates consistent representations for avatars on challenging poses.
-          </p>
-        </div>
-
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="90%">
-            <source src="./static/video/6.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Comparison Experiments. -->
-    
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            <a href="https://huliangxiao.github.io/GaussianAvatar">GaussianAvatar</a>: Towards Realistic Human Avatar Modeling from a Single Video via Animatable 3D Gaussians.
-          <p>
-            <a href="https://initialneil.github.io/SplattingAvatar">SplattingAvatar</a>: Realistic Real-Time Human Avatars with Mesh-Embedded Gaussian Splatting.
-          <p>
-
-        </div>
-      </div>
-    </div>
-    <!--/ Concurrent Work. -->
     
               
   </div>
