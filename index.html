@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GenericAvatar: Generic Human Modeling from Monocular Video Based on Mesh-guided Gaussians</title>
+  
+  <!-- Bulma CSS 框架和 Google 字体 -->
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  
+  <!-- 如无额外交互，可移除 JS 部分 -->
+</head>
+<body>
+
+  <!-- 论文标题部分 -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 style="font-size:30px; width: 1100px">
+              GenericAvatar: Generic Human Modeling from Monocular <br> Video Based on Mesh-guided Gaussians
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 框架图部分 -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body has-text-centered">
+        <img src="./static/images/method.png" alt="Framework Diagram" style="max-width:100%;">
+      </div>
+    </div>
+  </section>
+
+  <!-- 摘要部分 -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Abstract</h2>
+      <div class="content has-text-justified">
+        <p>
+            We propose a universal human avatar modeling framework—GenericAvatar—which leverages mesh-guided Gaussian splatting to achieve personalized, high-fidelity reconstruction of human bodies or heads from monocular videos. Our method is built upon a dual-module architecture. First, the Gaussian initialization module based on explicit triangular meshes embeds Gaussian splats onto the mesh surface and then transforms them into the global coordinate system, thereby stably capturing the low-frequency motions and surface deformations of human avatars. Second, the Gaussian adjustment module employs a Triplane representation to encode 3D Gaussian splats, followed by the integration of a spatial-posture cross attention module and a MLP module, which effectively overcomes the limitations of traditional linear blend skinning (LBS) in modeling complex non-rigid deformations, enabling precise modeling of high-frequency details such as clothing wrinkles and dynamic hair. By fully integrating the geometric priors provided by explicit meshes with implicit Gaussian representations, GenericAvatar demonstrates state-of-the-art reconstruction performance across PeopleSnapshot, ZJU-Mocap and a monocular head dataset. Experimental results indicate that GenericAvatar could accurately reconstruct full-body avatar and human head with complex textures and intricate dynamic details.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 下面的部分暂时不显示，已注释掉 -->
+  <!--
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="content has-text-centered">
+        <div class="hero-body">
+          <video id="teaser" autoplay muted loop playsinline width="90%">
+            <source src="./static/video/head.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h3 class="title is-4">Comparison Experiments</h3>
+      <div class="content has-text-justified">
+        <p>
+          <b>Novel view synthesis on PeopleSnapshot:</b> Our method is able to reconstruct intricate texture details.
+        </p>
+      </div>
+      <div class="content has-text-centered">
+        <video id="replay-video" controls muted preload playsinline width="90%">
+          <source src="./static/video/1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <!-- 其他视频及内容 -->
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+              Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  -->
+
+</body>
+</html>
